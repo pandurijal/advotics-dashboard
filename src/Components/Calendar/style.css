@@ -1,0 +1,38 @@
+.calendar {
+  display: flex;
+  padding: 30px;
+}
+
+.calendar .calendar-sidebar {
+  margin-right: 30px;
+  padding: 15px 30px;
+  text-align: left;
+  border-right: solid 1px rgba(var(--color-black), 0.5);
+}
+
+.calendar .calendar-sidebar .calendar-sidebar-item {
+  border-bottom: solid 1px rgba(var(--color-black), 0.5);
+  min-width: 150px;
+  padding: 10px 0;
+  margin: 15px 0;
+}
+
+.calendar .calendar-sidebar .calendar-sidebar-item.active {
+  font-weight: 700;
+  color: rgb(var(--brand-primary));
+}
+
+.calendar .calendar-sidebar .calendar-sidebar-item:hover {
+  font-weight: 700;
+  cursor: pointer;
+  color: rgb(var(--brand-primary));
+}
+
+.calendar .rc-calendar-selected-day .rc-calendar-date {
+  background: rgba(var(--brand-primary), 0.9);
+  border-radius: 100%;
+}
+
+.calendar .rc-calendar-range .rc-calendar-in-range-cell {
+  background: rgba(var(--brand-primary), 0.7);
+}
