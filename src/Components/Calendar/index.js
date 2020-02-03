@@ -35,34 +35,45 @@ const optRange = [
 ];
 
 const Calendar = () => {
+  const [show, setShow] = useState(false);
   const [selectedDate, setSelectedDate] = useState(dateRange.today);
   console.log({ selectedDate });
 
   return (
-    <div className="calendar">
-      <div className="calendar-sidebar">
-        {optRange.map(item => (
-          <div
-            key={item.text}
-            onClick={() => setSelectedDate(item.range)}
-            className={`calendar-sidebar-item ${
-              selectedDate === item.range ? 'active' : ''
-            }`}
-          >
-            <p>{item.text}</p>
-          </div>
-        ))}
+    <>
+      <div className="btn-calendar" onClick={() => setShow(!show)}>
+        <p>
+          {moment(selectedDate[0]).format('LL')} -{' '}
+          {moment(selectedDate[1]).format('LL')}
+        </p>
       </div>
-      <ReactCalendar
-        selectedValue={selectedDate}
-        disabledDate={current => {
-          return current.isAfter(dateRange.today);
-        }}
-        onSelect={moment => {
-          return setSelectedDate(moment);
-        }}
-      />
-    </div>
+      {show && (
+        <div className="calendar show">
+          <div className="calendar-sidebar">
+            {optRange.map(item => (
+              <div
+                key={item.text}
+                onClick={() => setSelectedDate(item.range)}
+                className={`calendar-sidebar-item ${
+                  selectedDate === item.range ? 'active' : ''
+                }`}
+              >
+                <p>{item.text}</p>
+              </div>
+            ))}
+          </div>
+          <ReactCalendar
+            selectedValue={selectedDate}
+            disabledDate={current => {
+              return current.isAfter(dateRange.today);
+            }}
+            onSelect={moment => {
+              return setSelectedDate(moment);
+            }}
+          />
+        </div>
+      )}
+    </>
   );
 };
 

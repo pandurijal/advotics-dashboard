@@ -1,10 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap');
+
 :root {
   --brand-primary: 55, 176, 76;
   --brand-secondary: #289e45;
   --color-black: 45, 52, 54;
+  --font-primary: 'Open Sans';
+  --font-secondary: 'Source Sans Pro';
 }
 
 p {
-  font-family: 'Open Sans';
+  font-family: var(--font-primary);
   margin: 0;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.homepage {
+  display: inline-flex;
 }

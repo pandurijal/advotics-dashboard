@@ -9,7 +9,44 @@
   width: 150px;
 }
 
+/* component wrapper content */
+.wrapper-content {
+  padding: 20px;
+}
+
+.wrapper-content.grid-6 {
+  width: 50%;
+}
+
+.wrapper-content.grid-3 {
+  width: 25%;
+}
+
+.wrapper-content .title {
+  font-family: var(--font-secondary);
+  font-size: 20px;
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+
 /* component calendar */
+.btn-calendar {
+  margin: 15px 0;
+  width: 250px;
+  padding: 15px;
+  color: white;
+  background-color: rgb(var(--brand-primary));
+}
+
+.btn-calendar:hover {
+  cursor: pointer;
+}
+
+.btn-calendar p {
+  text-align: center;
+  font-size: 14px;
+}
+
 .calendar {
   display: flex;
   padding: 30px;
@@ -47,4 +84,37 @@
 
 .calendar .rc-calendar-range .rc-calendar-in-range-cell {
   background: rgba(var(--brand-primary), 0.7);
+}
+
+/* component product card */
+.product-card {
+  display: flex;
+  margin: 10px 0;
+  padding: 4px;
+}
+
+.product-card.top {
+  background-color: khaki;
+}
+
+.product-card .img {
+  width: 20%;
+  margin-right: 10px;
+}
+
+.product-card .content {
+  width: 100%;
+}
+
+.product-card .content .name {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.product-card .content .info {
+  display: flex;
+}
+
+.product-card .content .info p {
+  flex: auto;
 }

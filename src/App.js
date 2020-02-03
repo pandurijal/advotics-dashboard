@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Calendar } from './Components';
+import { Navbar, Calendar, WrapperContent, ProductCard } from './Components';
 import {
   BarChart,
   Bar,
@@ -10,83 +10,70 @@ import {
   Tooltip,
   Legend
 } from 'recharts';
+import { MODEL_CHART, MODEL_BEST_SELLING, MODEL_TOP_COMPETITOR } from './const';
+
 import './App.css';
 import 'rc-calendar/assets/index.css';
 
-const data = [
-  {
-    month: 'Jan',
-    pv: 2400
-  },
-  {
-    month: 'Feb',
-    pv: 1398
-  },
-  {
-    month: 'Mar',
-    pv: 9800
-  },
-  {
-    month: 'Apr',
-    pv: 3908
-  },
-  {
-    month: 'May',
-    pv: 4800
-  },
-  {
-    month: 'Jun',
-    pv: 3800
-  },
-  {
-    month: 'Jul',
-    pv: 4300
-  },
-  {
-    month: 'Aug',
-    pv: 2400
-  },
-  {
-    month: 'Sep',
-    pv: 1398
-  },
-  {
-    month: 'Okt',
-    pv: 9800
-  },
-  {
-    month: 'Nov',
-    pv: 3908
-  },
-  {
-    month: 'Dec',
-    pv: 4800
-  }
-];
+const dataChart = MODEL_CHART;
+const dataBestSelling = MODEL_BEST_SELLING;
+const dataTopCompetitor = MODEL_TOP_COMPETITOR;
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <Calendar />
-      <BarChart
-        width={800}
-        height={300}
-        data={data}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="month" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Bar dataKey="pv" fill="rgb(var(--brand-primary))" />
-      </BarChart>
+      <div className="container">
+        <Calendar />
+        <div className="homepage">
+          <WrapperContent title="Average Purchase Value" grid="grid-6">
+            <BarChart
+              width={600}
+              height={300}
+              data={dataChart}
+              margin={{
+                top: 5,
+                right: 30,
+                left: 20,
+                bottom: 5
+              }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="month" />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Bar dataKey="pv" fill="rgb(var(--brand-primary))" />
+            </BarChart>
+          </WrapperContent>
+          <WrapperContent title="Best Selling SKU" grid="grid-3">
+            {dataBestSelling.map((item, index) => (
+              <div key={item.id}>
+                <ProductCard
+                  name={item.name}
+                  image={item.image}
+                  price={item.price}
+                  sold={item.sold}
+                  top={index === 0 ? true : false}
+                />
+              </div>
+            ))}
+          </WrapperContent>
+          <WrapperContent title="Top Competitor SKU" grid="grid-3">
+            {dataTopCompetitor.map((item, index) => (
+              <div key={item.id}>
+                <ProductCard
+                  name={item.name}
+                  image={item.image}
+                  price={item.price}
+                  sold={item.sold}
+                  top={index === 0 ? true : false}
+                />
+              </div>
+            ))}
+          </WrapperContent>
+        </div>
+      </div>
     </div>
   );
 }
