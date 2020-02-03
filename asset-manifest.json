@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/advotics-dashboard/static/css/main.1765078c.chunk.css",
+    "main.js": "/advotics-dashboard/static/js/main.ca3424d4.chunk.js",
+    "main.js.map": "/advotics-dashboard/static/js/main.ca3424d4.chunk.js.map",
+    "runtime-main.js": "/advotics-dashboard/static/js/runtime-main.448c4b42.js",
+    "runtime-main.js.map": "/advotics-dashboard/static/js/runtime-main.448c4b42.js.map",
+    "static/css/2.4118c0c4.chunk.css": "/advotics-dashboard/static/css/2.4118c0c4.chunk.css",
+    "static/js/2.6160e27c.chunk.js": "/advotics-dashboard/static/js/2.6160e27c.chunk.js",
+    "static/js/2.6160e27c.chunk.js.map": "/advotics-dashboard/static/js/2.6160e27c.chunk.js.map",
+    "index.html": "/advotics-dashboard/index.html",
+    "precache-manifest.dfa9b42ee261c84b93e13c015f2f0cb7.js": "/advotics-dashboard/precache-manifest.dfa9b42ee261c84b93e13c015f2f0cb7.js",
+    "service-worker.js": "/advotics-dashboard/service-worker.js",
+    "static/css/2.4118c0c4.chunk.css.map": "/advotics-dashboard/static/css/2.4118c0c4.chunk.css.map",
+    "static/css/main.1765078c.chunk.css.map": "/advotics-dashboard/static/css/main.1765078c.chunk.css.map",
+    "static/js/2.6160e27c.chunk.js.LICENSE.txt": "/advotics-dashboard/static/js/2.6160e27c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.448c4b42.js",
+    "static/css/2.4118c0c4.chunk.css",
+    "static/js/2.6160e27c.chunk.js",
+    "static/css/main.1765078c.chunk.css",
+    "static/js/main.ca3424d4.chunk.js"
+  ]
+}
